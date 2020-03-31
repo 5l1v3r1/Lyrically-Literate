@@ -1,0 +1,119 @@
+:root {
+    --main-color: rgba(255, 69, 69, 1);
+    --light-black: rgba(12, 12, 12, .9)
+}
+
+#featured {
+    width: 60%;
+    height: 100%;
+    margin: auto;
+}
+
+.container {
+    background-color: rgba(128, 128, 128, .1);
+    margin: 70px 0 0 0;
+    height: 100%;
+    padding: 15px
+}
+
+#news-title {
+    font-size: 32px;
+    letter-spacing: 1.5px;
+    color: var(--light-black);
+    font-weight: 600;
+}
+
+.fa-music {
+    color: var(--main-color)
+}
+
+#img1 {
+    position: absolute;
+    top:30%;
+    left: 8%;
+    height: 40px;
+    width: 40px;
+    transform: rotate(20deg)
+}
+
+#img2 {
+    position: absolute;
+    top:45%;
+    left: 94%;
+    height: 40px;
+    width: 40px;
+    transform: rotate(-10deg)
+}
+
+#img3 {
+    position: absolute;
+    top:50%;
+    left: 13%;
+    height: 40px;
+    width: 40px;
+    transform: rotate(-30deg)
+}
+
+#img4 {
+    position: absolute;
+    top:15%;
+    left: 87%;
+    height: 40px;
+    width: 40px;
+    transform: rotate(30deg)
+}
+
+#img5 {
+    position: absolute;
+    top:80%;
+    left: 84%;
+    height: 40px;
+    width: 40px;
+    transform: rotate(10deg)
+}
+
+#img6 {
+    position: absolute;
+    top:82%;
+    left: 5%;
+    height: 40px;
+    width: 40px;
+    transform: rotate(10deg)
+}
+
+#img7 {
+    position: absolute;
+    top: 30%;
+    left: 85%;
+    height: 40px;
+    width: 40px;
+    transform: rotate(-8deg)
+}
+
+#img8 {
+    position: absolute;
+    top:65%;
+    left: 90%;
+    height: 40px;
+    width: 40px;
+    transform: rotate(-10deg)
+}
+
+#img9 {
+    position: absolute;
+    top:12%;
+    left: 4%;
+    height: 40px;
+    width: 40px;
+    transform: rotate(-10deg)
+}
+
+#img10 {
+    position: absolute;
+    top:65%;
+    left: 5%;
+    height: 40px;
+    width: 40px;
+    transform: rotate(-10deg)
+}
+
