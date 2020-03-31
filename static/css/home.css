@@ -4,31 +4,87 @@
 }
 
 #featured {
-    width: 60%;
-    height: 100%;
+    max-width: 60%;
+    max-height: 100%;
     margin: auto;
 }
 
 .container {
-    background-color: rgba(128, 128, 128, .1);
-    margin: 70px 0 0 0;
-    height: 100%;
+    position: relative;
+    /* background-color: rgba(128, 128, 128, .1); */
+    margin: 65px 0 0 0;
+    max-height: 100%;
     padding: 15px
 }
 
+.container-header {
+    display: inline-flex;
+}
+
 #news-title {
-    font-size: 32px;
-    letter-spacing: 1.5px;
+    height: 10%;
+    font-size: 24px;
+    letter-spacing: 2px;
     color: var(--light-black);
     font-weight: 600;
+    border-bottom: solid 1px black;
+}
+
+#placeholder {
+    width: 5%;
+}
+
+#news-img1 {
+    width: 60%;
+    height: auto;
+    transition-duration: 1s;
+    box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 1), 0 6px 20px 0 rgba(128, 128, 128, .8);
+}
+
+#news-img1:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 1), 0 6px 20px 0 rgba(128, 128, 128, .8);
+}
+
+.article-news {
+    /* position: absolute; */
+    top: 5%;
+    width: 36%;
+}
+
+.article-news h3 {
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.article-news p {
+    margin-bottom: 4%;
+}
+
+.article-news span {
+    font-size: 10px;
+}
+
+#spacer {
+    border-bottom: solid 1px rgba(128, 128, 128, 1); 
+    margin-top: 3%;
 }
 
 .fa-music {
     color: var(--main-color)
 }
 
-#img1 {
+.img {
+    transition: .75s;
     position: absolute;
+}
+
+.img.one:hover, .img.two:hover, .img.three:hover, .img.four:hover, .img.five:hover, .img.six:hover, .img.seven:hover, .img.eight:hover, .img.nine:hover, .img.ten:hover {
+    transform: scale(1.25);
+}
+
+.img.one {
     top:30%;
     left: 8%;
     height: 40px;
@@ -36,8 +92,7 @@
     transform: rotate(20deg)
 }
 
-#img2 {
-    position: absolute;
+.img.two {
     top:45%;
     left: 94%;
     height: 40px;
@@ -45,8 +100,7 @@
     transform: rotate(-10deg)
 }
 
-#img3 {
-    position: absolute;
+.img.three {
     top:50%;
     left: 13%;
     height: 40px;
@@ -54,8 +108,7 @@
     transform: rotate(-30deg)
 }
 
-#img4 {
-    position: absolute;
+.img.four {
     top:15%;
     left: 87%;
     height: 40px;
@@ -63,8 +116,7 @@
     transform: rotate(30deg)
 }
 
-#img5 {
-    position: absolute;
+.img.five {
     top:80%;
     left: 84%;
     height: 40px;
@@ -72,8 +124,7 @@
     transform: rotate(10deg)
 }
 
-#img6 {
-    position: absolute;
+.img.six {
     top:82%;
     left: 5%;
     height: 40px;
@@ -81,8 +132,7 @@
     transform: rotate(10deg)
 }
 
-#img7 {
-    position: absolute;
+.img.seven {
     top: 30%;
     left: 85%;
     height: 40px;
@@ -90,8 +140,7 @@
     transform: rotate(-8deg)
 }
 
-#img8 {
-    position: absolute;
+.img.eight {
     top:65%;
     left: 90%;
     height: 40px;
@@ -99,8 +148,7 @@
     transform: rotate(-10deg)
 }
 
-#img9 {
-    position: absolute;
+.img.nine {
     top:12%;
     left: 4%;
     height: 40px;
@@ -108,8 +156,7 @@
     transform: rotate(-10deg)
 }
 
-#img10 {
-    position: absolute;
+.img.ten {
     top:65%;
     left: 5%;
     height: 40px;

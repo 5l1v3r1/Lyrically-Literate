@@ -1,3 +1,5 @@
+# OPERATION GET RED OCTOBERS 
+
 from flask import Flask, render_template, request, abort, redirect
 from flask.json import jsonify
 
@@ -12,3 +14,4 @@ def default():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
