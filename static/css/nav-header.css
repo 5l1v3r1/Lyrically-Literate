@@ -45,11 +45,13 @@ form {
 }
 
 #search-input {
-    display: inline-block;
-    font-weight: 600;
-    padding: 0 0 0 3px;
-    width: 225px;
-    height: 28px;
+    display: block;
+    font-size: 18px;
+    height: 18px;
+    padding: 0px;
+    margin-left: 2px;
+    margin-top: 8px;
+    width: 185px;
     background-color: transparent;
     outline: none;
     border: none;
@@ -58,12 +60,17 @@ form {
 }
 
 #search-input::placeholder {
-    font-weight: 600;
     color: var(--light-black);
-}
+} 
 
-[placeholder]:focus::-webkit-input-placeholder {
-    transition: text-indent 0.4s 0.4s ease; 
+[placeholder]:focus::-webkit-input-placeholder{
+    transition: text-indent 1.4s 1s ease; 
+    text-indent: -100%;
+    opacity: 1;
+} 
+
+[placeholder]:focus::-moz-placeholder {
+    transition: text-indent 1.4s 1s ease; 
     text-indent: -100%;
     opacity: 1;
  }
