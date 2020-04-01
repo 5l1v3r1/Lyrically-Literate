@@ -47,7 +47,7 @@ form {
 #search-input {
     display: inline-block;
     font-weight: 600;
-    padding-left: 2px;
+    padding: 0 0 0 3px;
     width: 225px;
     height: 28px;
     background-color: transparent;
@@ -61,6 +61,12 @@ form {
     font-weight: 600;
     color: var(--light-black);
 }
+
+[placeholder]:focus::-webkit-input-placeholder {
+    transition: text-indent 0.4s 0.4s ease; 
+    text-indent: -100%;
+    opacity: 1;
+ }
 /*  */
 
 
