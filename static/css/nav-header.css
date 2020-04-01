@@ -79,15 +79,29 @@ form {
 
 /* NAV */
 .logo {
-    /*found it but im tired from letting my creative juices flow slowely and ooz out of me also ILL COMMENT THIS BETTER CUZ U CODED IT AND IM FUCKING LOST IDIOT YOUR NOT BYYOURSELF ANYMORE IT HELPS TO ACTUALLY BE READABLE*/
+    /*FUck U ------> */ /*found it but im tired from letting my creative juices flow slowely and ooz out of me also ILL COMMENT THIS BETTER CUZ U CODED IT AND IM FUCKING LOST IDIOT YOUR NOT BYYOURSELF ANYMORE IT HELPS TO ACTUALLY BE READABLE*/
     position: relative;
-    font-size: 31px;
-    text-align: center;
     color: var(--light-black);
-    letter-spacing: 3px;
-    font-weight: bold;
-    text-transform: uppercase;
-    left: -12%;
+    top: 5%;
+    left: 21%;
+    width: 415px;
+    height: 42px;
+}
+
+#nav-logo-img {
+    width: 400px;
+    height: 38px;
+}
+
+.logo-right {
+    position: relative;
+    top: 2%;
+    left: 56%;
+}
+
+#logo-img {
+    width: 35px;
+    height: 35px;
 }
 
 .nav {
