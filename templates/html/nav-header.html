@@ -11,9 +11,9 @@
     <body>
         <header>
             <div class="main-header">
-                <span class="search-icon-wrapper">
+                <div class="search-icon-wrapper">
                     <img id='search-icon' src="/static/img/SearchIcon.png" alt="">
-                </span>
+                </div>
                 <form action="post">
                     <input id="search-input" type="text" placeholder="Search Songs & More"> 
                 </form>
@@ -35,6 +35,23 @@
             </nav>
         </header>
     </body>
+
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var navbar = document.getElementById("nav-bar");
+        var sticky = navbar.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            document.body.style.paddingTop = navbar.offsetHeight + 'px';
+            navbar.classList.add("sticky")
+          } else {
+            document.body.style.paddingTop = 0;
+            navbar.classList.remove("sticky");
+          }
+        }
+    </script>
 
     {% block content %}
     {% endblock %}
