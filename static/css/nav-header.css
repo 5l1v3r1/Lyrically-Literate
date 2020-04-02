@@ -55,7 +55,7 @@ form {
     padding: 0px;
     margin-left: 2px;
     margin-top: 8px;
-    width: 180px;
+    width: 185px;
     background-color: transparent;
     outline: none;
     border: none;
@@ -63,27 +63,9 @@ form {
     border-bottom: 2px solid var(--light-black);
 }
 
-/* FuckChromeChineseSellMyData */
 #search-input::placeholder {
     color: var(--light-black);
 } 
-
-/* FireGAYFox */
-#search-input::-moz-placeholder {
-    opacity: 1; /* Need on gay firefox (fuck u landin) because they're gay */
-    color: var(--light-black);
-} 
-
-/* FireGAYFox */
-#search-input:-moz-placeholder {
-    opacity: 1; /* Need on gay firefox (fuck u landin) because they're gay */
-    color: var(--light-black);
-} 
-
-/* Who the fuck uses microsoft edge??? */
-#search-input:-ms-input-placeholder {
-    color: var(--light-black);
-}
 
 [placeholder]:focus::-webkit-input-placeholder{
     transition: text-indent 1.4s 1s ease; 
@@ -197,7 +179,7 @@ form {
     .logo {
         margin-left: 30%;
     }
-
+    
     #img-a {
         left: 29.2%;
     }
