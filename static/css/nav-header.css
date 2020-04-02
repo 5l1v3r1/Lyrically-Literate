@@ -162,7 +162,7 @@ form {
 #img-a {
     position: relative;
     top: 2px;
-    left: 29.2%;
+    left: 23.4%;
 }
 
 #logo-img-red {
@@ -180,7 +180,7 @@ form {
         margin-left: 30%;
     }
     
-    .logo-right {
-        margin-left: 34%;
+    #img-a {
+        left: 29.2%;
     }
 }
