@@ -198,6 +198,16 @@ form {
         margin-left: 30%;
     }
     #img-a {
-        left: 29.2%;
+        left: 29%;
+    }
+}
+
+/* IF SCREEN SIZE NOT RESOLUTION IS > 2000 THEN  PUSH CONTENT MORE RIGHT*/
+@media only screen and (min-width: 2000px){
+    .logo {
+        margin-left: 32.5%;
+    }
+    #img-a {
+        left: 27.5%;
     }
 }
