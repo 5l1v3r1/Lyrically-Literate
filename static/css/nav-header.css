@@ -12,6 +12,10 @@
     font-weight: 400;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -153,4 +157,27 @@ form {
 .nav ul li a:hover {
     color: rgba(255, 69, 69, .86);
 }
+
+/* Black logo that appears after scrolling */
+#img-a {
+    position: relative;
+    left: 29.2%;
+}
+
+#logo-img-red {
+    height: 22px;
+    width: 22px;
+}
 /*  */
+
+
+/* TO FIX RESPONSIVE NESS */
+@media (max-width: 2000px) {
+    .logo {
+        margin-left: 30%;
+    }
+    
+    .logo-right {
+        margin-left: 34%;
+    }
+}
