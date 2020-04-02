@@ -3,6 +3,11 @@
     --light-black: rgba(12, 12, 12, .95)
 }
 
+@font-face {
+    font-family: AbrilFont;
+    src: url(/static/img/abrilfatface-regular.ttf);
+}
+  
 * {
     color: black;
     -webkit-font-smoothing: antiallized;
@@ -50,9 +55,10 @@ form {
 }
 
 #search-input {
+    font-family: AbrilFont;
     font-size: 18px;
     height: 18px;
-    padding: 0px;
+    padding-bottom: 3px;
     margin-left: 2px;
     margin-top: 8px;
     width: 180px;
@@ -195,10 +201,13 @@ form {
 /* IF SCREEN SIZE NOT RESOLUTION IS > 1600 THEN  PUSH CONTENT MORE RIGHT*/
 @media only screen and (min-width: 1600px){
     .logo {
-        margin-left: 30%;
+        margin-left: 28%;
+    }
+    .logo-right {
+        margin-left: 36%;
     }
     #img-a {
-        left: 29%;
+        left: 30.5%;
     }
 }
 

@@ -27,9 +27,9 @@ def news():
     return render_template("/html/news.html")
 
 
-@app.route("/community")
-def community():
-    return render_template("/html/community.html")
+@app.route("/about")
+def about():
+    return render_template("/html/about.html")
 
 
 @app.route("/shop")

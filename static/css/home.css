@@ -27,7 +27,7 @@
 }
 
 #news-title {
-    height: 10%;
+    margin-bottom: 10px;
     font-size: 24px;
     letter-spacing: 2px;
     color: var(--light-black);
@@ -39,15 +39,20 @@
     width: 5%;
 }
 
-#news-img1 {
+.article-news a {
     width: 60%;
     height: auto;
     transition-duration: 1s;
     box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 1), 0 6px 20px 0 rgba(128, 128, 128, .8);
 }
 
+#news-img1 {
+    transition-duration: 1s;
+    box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 1), 0 6px 20px 0 rgba(128, 128, 128, .8);
+}
+
 #news-img1:hover {
-    transform: scale(1.01);
+    transform: scale(1.008);
     box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 1), 0 6px 20px 0 rgba(128, 128, 128, .8);
 }
 
@@ -78,96 +83,28 @@
     margin-bottom: 3%;
 }
 
-.fa-music {
-    color: var(--main-color)
+
+/* MIDDLE GREY SECTION */
+.middle-grey {
+    background-color: var(--light-black);
 }
 
-.img {
-    transition: .75s;
-    position: absolute;
+.article-long {
+    width: 100%;
+    height: 500px;
 }
 
-.img.one:hover, .img.two:hover, .img.three:hover, .img.four:hover, .img.five:hover, .img.six:hover, .img.seven:hover, .img.eight:hover, .img.nine:hover, .img.ten:hover {
-    transform: scale(1.25);
+/* media querys to check height etc for ading spacing in news article content - less empty spacve at bottom  */
+
+/* IF SCREEN SIZE NOT RESOLUTION IS > 1600 THEN  PUSH CONTENT MORE RIGHT*/
+@media only screen and (min-width: 1600px){
+    .article-news p {
+        margin-bottom: 8%;
+        letter-spacing: 1px;
+    }
 }
 
-.img.one {
-    top:30%;
-    left: 8%;
-    height: 40px;
-    width: 40px;
-    transform: rotate(20deg)
-}
+/* IF SCREEN SIZE NOT RESOLUTION IS > 2000 THEN  PUSH CONTENT MORE RIGHT*/
+@media only screen and (min-width: 2000px){
 
-.img.two {
-    top:45%;
-    left: 94%;
-    height: 40px;
-    width: 40px;
-    transform: rotate(-10deg)
 }
-
-.img.three {
-    top:50%;
-    left: 13%;
-    height: 40px;
-    width: 40px;
-    transform: rotate(-30deg)
-}
-
-.img.four {
-    top:15%;
-    left: 87%;
-    height: 40px;
-    width: 40px;
-    transform: rotate(30deg)
-}
-
-.img.five {
-    top:80%;
-    left: 84%;
-    height: 40px;
-    width: 40px;
-    transform: rotate(10deg)
-}
-
-.img.six {
-    top:82%;
-    left: 5%;
-    height: 40px;
-    width: 40px;
-    transform: rotate(10deg)
-}
-
-.img.seven {
-    top: 30%;
-    left: 85%;
-    height: 40px;
-    width: 40px;
-    transform: rotate(-8deg)
-}
-
-.img.eight {
-    top:65%;
-    left: 90%;
-    height: 40px;
-    width: 40px;
-    transform: rotate(-10deg)
-}
-
-.img.nine {
-    top:12%;
-    left: 4%;
-    height: 40px;
-    width: 40px;
-    transform: rotate(-10deg)
-}
-
-.img.ten {
-    top:65%;
-    left: 5%;
-    height: 40px;
-    width: 40px;
-    transform: rotate(-10deg)
-}
-
