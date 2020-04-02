@@ -71,7 +71,6 @@
 }
 
 .article-content .source{
-    margin-top: 7vh;
     font-size: 12px;
 }
 
@@ -111,6 +110,10 @@
     .article-content p {
         font-size: 18px;
         letter-spacing: 1.25px;
+    }
+
+    .article-content .source {
+        margin-top: 7vh;
     }
 }
 
