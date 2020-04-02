@@ -7,6 +7,11 @@
     font-family: AbrilFont;
     src: url(/static/img/abrilfatface-regular.ttf);
 }
+
+@font-face {
+    font-family: ColusFont;
+    src: url(/static/img/colus-regular.ttf);
+}
   
 * {
     color: black;
@@ -55,10 +60,9 @@ form {
 }
 
 #search-input {
-    font-family: AbrilFont;
     font-size: 18px;
     height: 18px;
-    padding-bottom: 3px;
+    padding-bottom: 1px;
     margin-left: 2px;
     margin-top: 8px;
     width: 180px;
@@ -137,8 +141,7 @@ form {
     -webkit-font-smoothing: antiallized;
     min-height: 35px;
     width: 100%;
-    font-family: program, sans-serif;
-    font-style: normal;
+    font-family: ColusFont;
     font-weight: 500;
     line-height: 1.45;
     letter-spacing: 2.5px;
@@ -176,6 +179,7 @@ form {
 .nav ul li a {
     color: white;
     text-decoration: none;
+    transition: .5s linear;
 }
 
 .nav ul li a:hover {
@@ -186,7 +190,7 @@ form {
 #img-a {
     position: relative;
     top: 2px;
-    left: 23.4%;
+    left: 25%;
 }
 
 #logo-img-red {

@@ -7,51 +7,56 @@
     <link rel="stylesheet" href="./static/css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- <img class='img one' src='/static/img/MusicNote1.png'/>
-    <img class='img two' src='/static/img/MusicNote1.png'/>
-    <img class='img three' src='/static/img/MusicNote1.png'/>
-    <img class='img four' src='/static/img/MusicNote1.png'/>
-    <img class='img five' src='/static/img/MusicNote1.png'/>
-    <img class='img six' src='/static/img/MusicNote1.png'/>
-    <img class='img seven' src='/static/img/MusicNote1.png'/>
-    <img class='img eight' src='/static/img/MusicNote1.png'/>
-    <img class='img nine' src='/static/img/MusicNote1.png'/>
-    <img class='img ten' src='/static/img/MusicNote1.png'/> -->
-
     <section id="featured">
-        <div class="container">
-            <div class="container-header">
-                <article class="article-news">
-                    <div id='news-title'>Featured News</div>
-                    <h3>NPR Music's Top 10 Albums Of March</h3>
+        <section class="section">
+            <!-- News article one -->
+            <div class="content-conatiner">
+                <!-- Stores all article content | Displayed flex thats why theres a article conatiner-->
+                <article class="article-content left">
+                    <div class='news-title'>Featured News</div>
+                    <div class="title-line"></div>
+                    <a href="https://www.npr.org/2020/03/31/823556840/npr-musics-top-11-albums-of-march-2020"><h3>NPR Music's Top 10 Albums Of March</h3></a>
                     <p>
                         This month, that included surprise drops from Childish Gambino and Jay Electronica, plus Waxahatchee's tender Saint Cloud. And because it was released on the leap year — Feb. 29 — we couldn't let March pass without highlighting Bad Bunny's phenomenal YHLQMDLG as a bonus.
                     </p>
-                    <span>Source: https://www.npr.org/2020/03/31/823556840/npr-musics-top-11-albums-of-march-2020</span>            
+                    <span>Source: https://www.npr.org/2020/03/31/823556840/npr-musics-top-11-albums-of-march-2020</span>               
                 </article>
-                <div id='placeholder'></div>
-                <a href="https://www.npr.org/2020/03/31/823556840/npr-musics-top-11-albums-of-march-2020"><img id="news-img1" src="/static/img/TestNews1.jpg"></a>
+                <!-- Gets pushed to right because of flex -->
+                <a href="https://www.npr.org/2020/03/31/823556840/npr-musics-top-11-albums-of-march-2020"><img class="news-img" src="/static/img/TestNews1.jpg"></a>
             </div>
+
             <div class="spacer"></div>
-            <section class="container-middle">
-                <article class="article-news">
-                    <div id='news-title'>New Releases</div>
-                    <h3>The Weeknd’s ‘After Hours’ Debuts at No. 1 on Billboard 200 Chart</h3>
+
+            <!-- News article two -->
+            <div class="content-conatiner">
+                <!-- Gets pushed to left because of flex -->
+                <a href="https://www.billboard.com/articles/business/chart-beat/9345850/the-weeknd-after-hours-billboard-200-debut-2020-biggest-week"><img class="news-img" src="/static/img/TestNews2.jpg"></a>
+
+                <!-- Stores all article content | Displayed flex thats why theres a article conatiner-->
+                <article class="article-content right">
+                    <div class='news-title'>New Releases</div>
+                    <div class="title-line"></div>
+                    <a href="https://www.billboard.com/articles/business/chart-beat/9345850/the-weeknd-after-hours-billboard-200-debut-2020-biggest-week"><h3>The Weeknd’s ‘After Hours’ Debuts at No. 1 on Billboard 200 Chart</h3></a>
                     <p>
                         The Weeknd rocks the top of the Billboard 200 albums chart, as he scores his fourth No. 1 album with his latest release, After Hours. The set jumps in with the year’s biggest week for any album: 444,000 equivalent album units in the U.S                    
                     </p>
                     <span>Source: https://www.billboard.com/articles/business/chart-beat/9345850/the-weeknd-after-hours-billboard-200-debut-2020-biggest-week</span>
                 </article>
-                <div id='placeholder'></div>
-                <a href="https://www.billboard.com/articles/business/chart-beat/9345850/the-weeknd-after-hours-billboard-200-debut-2020-biggest-week"><img id="news-img1" src="/static/img/TestNews2.jpg"></a>
-            </section>
-            <div class="spacer"></div>
-            <section class="middle-grey">
-                <article class="article-long">
+            </div>
 
-                </article>
-            </section>
-        </div>
+            <div class="spacer"></div>
+
+        </section>
+        <section class="section grey">
+            <div class="content-conatiner">
+                
+            </div>
+        </section>
+        <section class="section">
+            <div class="content-conatiner">
+
+            </div>
+        </section>
     </section>
 </html>
 

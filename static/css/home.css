@@ -3,105 +3,107 @@
     --light-black: rgba(12, 12, 12, .9)
 }
 
+
+/* EACH SECTION WRAPPERS */
 #featured {
-    max-width: 60%;
-    max-height: 100%;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 65px;
+    width: 100%;
+    height: 100%;
 }
 
-.container {
-    position: relative;
-    /* background-color: rgba(128, 128, 128, .1); */
-    margin: 40px 0 0 0;
-    max-height: 100%;
-    padding: 15px
-}
-
-.container-header {
-    display: inline-flex;
-}
-
-.container-middle {
-    display: inline-flex;
-    flex-direction: row-reverse;
-}
-
-#news-title {
-    margin-bottom: 10px;
-    font-size: 24px;
-    letter-spacing: 2px;
-    color: var(--light-black);
-    font-weight: 600;
-    border-bottom: solid 1px black;
-}
-
-#placeholder {
-    width: 5%;
-}
-
-.article-news a {
-    width: 60%;
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: auto;
-    transition-duration: 1s;
+}
+
+.grey {
+    background-color: var(--light-black);
+}
+
+.content-conatiner {
+    display: flex;
+    height: 100%;
+    width: 60%;
+}
+/* ----- */
+
+
+/* ARTICLE CONTENTS */
+.article-content.left {
+    padding-right: 25px;
+}
+
+.article-content.right {
+    padding-left: 25px;
+}
+
+.news-title {
+    font-size: 30px;
+    width: auto;
+    letter-spacing: 2px;
+}
+
+.title-line {
+    background-color: var(--main-color);
+    width: 100%;
+    height: 2px;
     box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 1), 0 6px 20px 0 rgba(128, 128, 128, .8);
 }
 
-#news-img1 {
-    transition-duration: 1s;
+.article-content a {
+    text-decoration: none;
+}
+
+.article-content a:hover {
+    text-decoration: underline var(--light-black);
+}
+
+.article-content h3{
+    font-size: 21px;
+}
+
+.article-content p{
+    letter-spacing: 1px;
+}
+
+.article-content span{
+    font-size: 12px;
+}
+
+.news-img {
+    transition: .5s linear;
     box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 1), 0 6px 20px 0 rgba(128, 128, 128, .8);
 }
 
-#news-img1:hover {
+.news-img:hover {
     transform: scale(1.008);
     box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 1), 0 6px 20px 0 rgba(128, 128, 128, .8);
 }
 
-.article-news {
-    /* position: absolute; */
-    top: 5%;
-    width: 36%;
-}
 
-.article-news h3 {
-    letter-spacing: 1px;
-    font-size: 30px;
-    margin-bottom: 0;
-    margin-top: 5px;
-}
-
-.article-news p {
-    margin-bottom: 4%;
-}
-
-.article-news span {
-    font-size: 10px;
+/* All IMGS WILL TAKE UP WHATS LEFT OVER FROM ARTICLE SO ITS DYNAMIC */
+.content-conatiner img {
+    width: 100%;
+    height: 100%;
 }
 
 .spacer {
-    border-bottom: solid 1px rgba(128, 128, 128, 1); 
-    margin-top: 3%;
-    margin-bottom: 3%;
+    width: 892.4;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 1), 0 6px 20px 0 rgba(128, 128, 128, .8);
+    border-bottom: solid 2px rgba(128, 128, 128, 1); 
 }
 
-
-/* MIDDLE GREY SECTION */
-.middle-grey {
-    background-color: var(--light-black);
-}
-
-.article-long {
-    width: 100%;
-    height: 500px;
-}
 
 /* media querys to check height etc for ading spacing in news article content - less empty spacve at bottom  */
 
 /* IF SCREEN SIZE NOT RESOLUTION IS > 1600 THEN  PUSH CONTENT MORE RIGHT*/
 @media only screen and (min-width: 1600px){
-    .article-news p {
-        margin-bottom: 8%;
-        letter-spacing: 1px;
-    }
+
 }
 
 /* IF SCREEN SIZE NOT RESOLUTION IS > 2000 THEN  PUSH CONTENT MORE RIGHT*/
