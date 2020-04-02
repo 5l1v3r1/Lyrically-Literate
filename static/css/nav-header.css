@@ -133,7 +133,7 @@ form {
 }
   
 .nav ul {
-    padding: 4px 0 0 0;
+    padding: 3px 0 0 0;
     text-align: center;
     margin-top : 0;
 }
@@ -161,6 +161,7 @@ form {
 /* Black logo that appears after scrolling */
 #img-a {
     position: relative;
+    top: 2px;
     left: 29.2%;
 }
 
