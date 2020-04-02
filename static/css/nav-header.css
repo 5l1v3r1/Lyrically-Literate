@@ -208,24 +208,15 @@ form {
 /* TO FIX RESPONSIVENESS */
 
 /* IF SCREEN SIZE NOT RESOLUTION IS > 1600 THEN  PUSH CONTENT MORE RIGHT*/
-/* @media only screen and (min-width: 1600px){
+@media only screen and (min-width: 1600px){
     .logo {
-        margin-left: 28%;
-    }
-    .logo-right {
-        margin-left: 36%;
-    }
-    #img-a {
-        left: 30.5%;
+        transform: translateX(-60%);
     }
 }
 
 /* IF SCREEN SIZE NOT RESOLUTION IS > 2000 THEN  PUSH CONTENT MORE RIGHT*/
-/* @media only screen and (min-width: 2000px){
+@media only screen and (min-width: 2000px){
     .logo {
-        margin-left: 32.5%;
+        transform: translateX(-70%);
     }
-    #img-a {
-        left: 27.5%;
-    }
-} */ 
+} 
