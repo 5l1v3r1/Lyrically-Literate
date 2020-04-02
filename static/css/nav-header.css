@@ -172,8 +172,10 @@ form {
 /*  */
 
 
-/* TO FIX RESPONSIVE NESS */
-@media (max-width: 2000px) {
+/* TO FIX RESPONSIVENESS */
+
+/* IF SCREEN SIZE NOT RESOLUTION IS > 1600 THEN  PUSH CONTENT MORE RIGHT*/
+@media only screen and (min-width: 1600px) {
     .logo {
         margin-left: 30%;
     }
