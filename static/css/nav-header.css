@@ -24,6 +24,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -218,11 +219,16 @@ a:focus {
 }
 
 #social-media {
+    display: inline-flex;
     position: absolute;
     top: 46px;
-    left: 100%;
+    left: 102.5%;
     width: auto;
     transform: translateX(-160%);
+}
+
+i.fa {
+    margin-right: 15px;
 }
 
 i.fa::before {
