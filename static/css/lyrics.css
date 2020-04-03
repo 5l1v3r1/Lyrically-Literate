@@ -12,6 +12,11 @@
 .spacer {
     margin: 20px 0;
 }
+
+.section:first-of-type {
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
 /* ** */
 
 
@@ -127,4 +132,22 @@ label:last-of-type {
 .btn:hover {
     cursor: pointer;
     outline: none;
+}
+/* **** */
+
+/* SEARCH RESULTS */
+.section.grey {
+    height: 100%;
+}
+
+.content-conatiner {
+    padding-top: 10px;
+}
+
+.section.grey .news-title {
+    color: white;
+}
+
+#search-results-title {
+    letter-spacing: 2.5px;
 }

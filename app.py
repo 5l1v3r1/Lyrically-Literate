@@ -53,8 +53,9 @@ def search_post():
 
 @app.route("/lyrics", methods=['POST'])
 def lyrics_post():
-    search = request.form['type']
-    print(f"Lyrics Search: {search}")
+    search_type = request.form['type']
+    search_term = request.form['search-term']
+    print(f"Lyrics Search: {search_type}")
     return render_template("/html/lyrics.html")
 
 

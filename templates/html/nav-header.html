@@ -32,6 +32,9 @@
                    <li><a href='/about'>About</a></li> 
                    <li><a href='/shop'>Shop</a></li> 
                 </ul>
+                <div id="social-media">
+                    <a href="https://www.instagram.com/lyricallyliterate/"><span><i class="fa fa-instagram" aria-hidden="true"></i></span></a>
+                </div>
                 <div class="logo-right-red" id="FuckLandin">
                     <a href="/" id='img-a'><img id='logo-img-red' src="/static/img/MainLogoLarge.png" alt=""></a>
                 </div>
@@ -44,6 +47,7 @@
         
         var navbar = document.getElementById("nav-bar");
         var logo = document.getElementById("FuckLandin");
+        var social = document.getElementById("social-media");
         var sticky = navbar.offsetTop;
     
         function myFunction() {
@@ -51,11 +55,13 @@
             document.body.style.paddingTop = navbar.offsetHeight + 'px';
             logo.style.top = 4 + 'px';
             FuckLandin.style.display = "block"
+            social.style.display = "none"
             navbar.classList.add("sticky")
           } else {
             document.body.style.paddingTop = 0;
             navbar.classList.remove("sticky");
             FuckLandin.style.display = "none"
+            social.style.display = "block"
             logo.style.top = 46 + 'px';
           }
         }

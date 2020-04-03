@@ -1,6 +1,6 @@
 :root {
     --main-color: rgba(255, 69, 69, .5);
-    --light-black: rgba(12, 12, 12, .95)
+    --light-black: rgba(18, 18, 18)
 }
 
 @font-face {
@@ -169,7 +169,6 @@ a:focus {
     letter-spacing: 2.5px;
     font-size: 1.15em;
     background-color: var(--light-black);
-    margin: 0;
 }
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
@@ -182,7 +181,7 @@ a:focus {
 }
   
 .nav ul {
-    padding: 3px 0 0 0;
+    padding: 5px 0 0 0;
     text-align: center;
     margin-top : 0;
 }
@@ -216,6 +215,19 @@ a:focus {
     left: 100%;
     width: auto;
     transform: translateX(-185%);
+}
+
+#social-media {
+    position: absolute;
+    top: 46px;
+    left: 100%;
+    width: auto;
+    transform: translateX(-160%);
+}
+
+i.fa::before {
+    font-size: 25px;
+    color:rgba(255, 69, 69, 1); 
 }
 
 #logo-img-red {
