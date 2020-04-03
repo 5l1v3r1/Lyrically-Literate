@@ -12,20 +12,32 @@
         <section class="section">
 
             <div class="content-conatiner">
-                <article class="article-content left">
+                <article class="article-content">
                     <div class='news-title'>Advanced Content Search</div>
                     <div class="title-line"></div>
                     <form action="/lyrics" method="post" class="form-adv">
                         <div class="flex-wrapper">
                             <div class="radio-wrapper">
-                                <input class="radio" type="radio" id="any" name="type" value="any">
-                                <label for="song">All</label>
-                                <input class="radio" type="radio" id="song" name="type" value="song">
-                                <label for="song">Song</label>
-                                <input class="radio" type="radio" id="artist" name="type" value="artist">
-                                <label for="artist">Artist</label>
-                                <input class="radio" type="radio" id="album" name="type" value="album">
-                                <label for="album">Album</label><br> 
+                                <label unselectable="on"> 
+                                    <input class="radio" type="radio" id="any" name="type" value="any">
+                                    <span class="radio-border"></span>
+                                    Any
+                                </label>                    
+                                <label>
+                                    <input class="radio" type="radio" id="song" name="type" value="song">
+                                    <span class="radio-border"></span>
+                                    Songs
+                                </label>
+                                <label>
+                                    <input class="radio" type="radio" id="artist" name="type" value="artist">
+                                    <span class="radio-border"></span>
+                                    Artists
+                                </label>
+                                <label>
+                                    <input class="radio" type="radio" id="album" name="type" value="album">
+                                    <span class="radio-border"></span>
+                                    Albums
+                                </label>
                                 <div class="search-btn-wrapper">
                                     <input type="text" id="search-term" name="search-term" placeholder="Search for anything">
                                     <button class="btn" type="submit" name="search" value="search">Search</button>     

@@ -6,6 +6,7 @@
 
 .news-title {
     text-align: center;
+    width: auto;
 }
 
 .spacer {
@@ -40,14 +41,39 @@
 }
 
 .radio {
+    display: none;
     float: left;
     clear: none;
     margin: 15px 0 0 5px;
     width: auto;
 }
 
-.radio:first-of-type {
-    margin: 15px 0 0 0px;
+.radio-border {
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    border: solid 2px rgba(255, 69, 69, 1);
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+.radio-border::after {
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: rgba(255, 69, 69, 1);
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: 300ms ease-in-out 0s;
+}
+
+input[type='radio']:checked ~ .radio-border::after {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 label {
@@ -57,12 +83,20 @@ label {
     float: left;
     clear: none;
     display: block;
-    padding: 10px 1em 0px 8px;
+    margin: 10px 20px 0px 1px;
     width: auto;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    letter-spacing: 1.25px;
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
 }
 
 label:last-of-type {
-    padding: 10px 0 0px 8px;
+    margin-right: 0;
 }
 
 #search-term {
@@ -87,6 +121,7 @@ label:last-of-type {
     border-bottom: solid 2px rgba(255, 69, 69, 1);
     padding: 5px;
     width: 20%;
+    letter-spacing: 1.25px;
 }
 
 .btn:hover {
