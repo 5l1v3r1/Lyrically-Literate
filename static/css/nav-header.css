@@ -32,6 +32,11 @@ body {
     color: white;
 }
 
+/* Disable all outlines for links - mainly for firefox */
+a:focus {
+    outline: none;
+}
+
 .main-header {
     display: flex;
     align-items: center;
@@ -53,7 +58,7 @@ body {
     height: 25px;
 }
 
-form {
+.form-search {
     margin: 0;
     width: 30%;
 }

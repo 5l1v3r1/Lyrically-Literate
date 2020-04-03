@@ -13,16 +13,22 @@
 
             <div class="content-conatiner">
                 <article class="article-content left">
-                    <div class='news-title'>Content Search</div>
+                    <div class='news-title'>Advanced Content Search</div>
                     <div class="title-line"></div>
-                    <form action="/lyrics" method="post">
-                        <input class="radio" type="radio" id="song" name="type" value="song">
-                        <label for="song">Song</label><br>   
-                        <input class="radio" type="radio" id="artist" name="type" value="artist">
-                        <label for="artist">Artist</label><br>
-                        <input class="radio" type="radio" id="album" name="type" value="album">
-                        <label for="album">Album</label>
-                        <button class="btn" type="submit" name="search" value="search">Search</button>              
+                    <form action="/lyrics" method="post" class="form-adv">
+                        <div class="flex-wrapper">
+                            <div class="radio-wrapper">
+                                <input class="radio" type="radio" id="any" name="type" value="any">
+                                <label for="song">Any</label>
+                                <input class="radio" type="radio" id="song" name="type" value="song">
+                                <label for="song">Song</label>
+                                <input class="radio" type="radio" id="artist" name="type" value="artist">
+                                <label for="artist">Artist</label>
+                                <input class="radio" type="radio" id="album" name="type" value="album">
+                                <label for="album">Album</label><br> 
+                                <button class="btn" type="submit" name="search" value="search">Search</button>                
+                            </div>                       
+                        </div>
                     </form>
                 </article>
             </div>
