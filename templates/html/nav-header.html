@@ -4,7 +4,7 @@
         <meta name="description" content="Discover The True Meaning Behind The Lyrics">
         <meta name="keywords" content="music, lyrics, Meaning">
         <meta name="author" content="Nick Mantini">
-        <link rel="stylesheet" href="./static/css/nav-header.css">
+        <link rel="stylesheet" href="/static/css/nav-header.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="/static/img/MainLogoLarge.png">
     </head>
@@ -14,8 +14,8 @@
                 <div class="search-icon-wrapper">
                     <img id='search-icon' src="/static/img/SearchIcon.png" alt="">
                 </div>
-                <form action="post">
-                    <input id="search-input" type="text" placeholder="Search Songs & More"> 
+                <form action="/search" method="post">
+                    <input id="search-input" name="search" type="text" placeholder="Search Songs & More" autocomplete="off"> 
                 </form>
                 <div class="logo">
                    <a href="/"><img id='nav-logo-img' src="/static/img/NavLogo4K.png" alt=""></a>

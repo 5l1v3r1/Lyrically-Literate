@@ -7,6 +7,7 @@ from flask.json import jsonify
 app = Flask(__name__)
 
 
+## ALL URL ROUTES
 @app.route("/")
 def home():
     return render_template("/html/home.html")
@@ -35,6 +36,32 @@ def about():
 @app.route("/shop")
 def shop():
     return render_template("/html/shop.html")
+
+
+@app.route('/search-results')
+def search_results():
+    pass
+
+
+# ALL POST VARIABLE ROUTES
+@app.route("/search", methods=['POST'])
+def search_post():
+    search = request.form['search']
+    print(f"Search: {search}")
+    return render_template("/html/lyrics.html")
+
+
+@app.route("/lyrics", methods=['POST'])
+def lyrics_post():
+    search = request.form['type']
+    print(f"Lyrics Search: {search}")
+    return render_template("/html/lyrics.html")
+
+
+@app.route("/search/<first>-<last>-<song>")
+def search(first=None, last=None, song=None):
+    print(f"First name: {first} | Last name: {last} | Song name: {song}")
+    return render_template("/html/lyrics.html")
 
 
 if __name__ == "__main__":
