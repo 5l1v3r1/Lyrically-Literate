@@ -112,6 +112,7 @@ form {
 
 /* HEADER NAV */
 .logo {
+    -webkit-font-smoothing: antiallized;
     /*bitch u dumb *//*FUck U ------> */ /*found it but im tired from letting my creative juices flow slowely and ooz out of me also ILL COMMENT THIS BETTER CUZ U CODED IT AND IM FUCKING LOST IDIOT YOUR NOT BYYOURSELF ANYMORE IT HELPS TO ACTUALLY BE READABLE*/
     color: var(--light-black);
     margin-left: auto;
@@ -191,6 +192,7 @@ form {
 
 /* Black logo that appears after scrolling */
 .logo-right-red {
+    display: none;
     position: absolute;
     top: 46px;
     left: 100%;

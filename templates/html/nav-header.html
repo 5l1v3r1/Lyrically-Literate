@@ -18,7 +18,7 @@
                     <input id="search-input" type="text" placeholder="Search Songs & More"> 
                 </form>
                 <div class="logo">
-                   <a href="/"><img id='nav-logo-img' src="/static/img/NavLogo.png" alt=""></a>
+                   <a href="/"><img id='nav-logo-img' src="/static/img/NavLogo4K.png" alt=""></a>
                 </div>
                 <div class="logo-right">
                     <a href="/"><img id='logo-img' src="/static/img/MainLogoLargeBlack.png" alt=""></a>
@@ -32,7 +32,7 @@
                    <li><a href='/about'>About</a></li> 
                    <li><a href='/shop'>Shop</a></li> 
                 </ul>
-                <div class="logo-right-red">
+                <div class="logo-right-red" id="FuckLandin">
                     <a href="/" id='img-a'><img id='logo-img-red' src="/static/img/MainLogoLarge.png" alt=""></a>
                 </div>
             </nav>
@@ -43,15 +43,20 @@
         window.onscroll = function() {myFunction()};
         
         var navbar = document.getElementById("nav-bar");
+        var logo = document.getElementById("FuckLandin");
         var sticky = navbar.offsetTop;
     
         function myFunction() {
           if (window.pageYOffset >= sticky) {
             document.body.style.paddingTop = navbar.offsetHeight + 'px';
+            logo.style.top = 4 + 'px';
+            FuckLandin.style.display = "block"
             navbar.classList.add("sticky")
           } else {
             document.body.style.paddingTop = 0;
             navbar.classList.remove("sticky");
+            FuckLandin.style.display = "none"
+            logo.style.top = 46 + 'px';
           }
         }
     </script>
