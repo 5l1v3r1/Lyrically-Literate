@@ -112,7 +112,6 @@ form {
 
 /* HEADER NAV */
 .logo {
-    -webkit-font-smoothing: antiallized;
     /*bitch u dumb *//*FUck U ------> */ /*found it but im tired from letting my creative juices flow slowely and ooz out of me also ILL COMMENT THIS BETTER CUZ U CODED IT AND IM FUCKING LOST IDIOT YOUR NOT BYYOURSELF ANYMORE IT HELPS TO ACTUALLY BE READABLE*/
     color: var(--light-black);
     margin-left: auto;
@@ -125,6 +124,13 @@ form {
 #nav-logo-img {
     width: 400px;
     height: 38px;
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated; /* Chrome */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
 }
 
 .logo-right {
