@@ -42,9 +42,10 @@
 }
 
 .news-title {
-    font-size: 35px;
+    font-size: 40px;
+    font-weight: bold;
     width: auto;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
 }
 
 .title-line {
@@ -109,6 +110,7 @@
 }
 
 #search-results-title {
+    margin-top: 10px;
     letter-spacing: 2.5px;
 }
 

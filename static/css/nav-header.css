@@ -231,9 +231,9 @@ a:focus {
     display: inline-flex;
     position: absolute;
     top: 46px;
-    left: 102.5%;
+    left: 100%;
     width: auto;
-    transform: translateX(-160%);
+    transform: translateX(-100%);
 }
 
 i.fa {
