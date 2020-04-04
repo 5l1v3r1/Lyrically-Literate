@@ -1,6 +1,7 @@
 # Music Venture | Name: Lyrically Literate 
 ### Current State:
 
+Gif overview
 ![](/static/website_screenshots/OverviewGif.gif)
 
 Homepage
