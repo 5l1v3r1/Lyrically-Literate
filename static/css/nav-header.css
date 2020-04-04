@@ -118,7 +118,6 @@ a:focus {
 
 /* HEADER NAV */
 .logo {
-    /*bitch u dumb *//*FUck U ------> */ /*found it but im tired from letting my creative juices flow slowely and ooz out of me also ILL COMMENT THIS BETTER CUZ U CODED IT AND IM FUCKING LOST IDIOT YOUR NOT BYYOURSELF ANYMORE IT HELPS TO ACTUALLY BE READABLE*/
     color: var(--light-black);
     margin-left: auto;
     transform: translateX(-50%);
@@ -242,7 +241,13 @@ i.fa {
 
 i.fa::before {
     font-size: 25px;
-    color:rgba(255, 69, 69, 1); 
+    color:#ff4545; 
+}
+
+i img {
+    margin-top: 3px;
+    width: 36.5px;
+    height: 18.67px;
 }
 
 #logo-img-red {
