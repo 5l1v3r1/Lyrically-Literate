@@ -5,18 +5,19 @@
         <meta name="keywords" content="music, lyrics, Meaning">
         <meta name="author" content="Nick Mantini">
         <link rel="stylesheet" href="/static/css/nav-header.css">
+        <link rel="stylesheet" href="/static/css/home.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="/static/img/MainLogoLarge.png">
     </head>
     <body>
         <header>
             <div class="main-header">
-                <div class="search-icon-wrapper">
+                <div class="search-wrapper">
                     <img id='search-icon' src="/static/img/SearchIcon.png" alt="">
+                    <form action="/search" method="post" class="form-search">
+                        <input id="search-input" name="search" type="text" placeholder="Search Songs & More" autocomplete="off"> 
+                    </form>
                 </div>
-                <form action="/search" method="post" class="form-search">
-                    <input id="search-input" name="search" type="text" placeholder="Search Songs & More" autocomplete="off"> 
-                </form>
                 <div class="logo">
                    <a href="/"><img id='nav-logo-img' src="/static/img/NavLogo4K.png" alt=""></a>
                 </div>
@@ -24,9 +25,12 @@
                     <a href="/"><img id='logo-img' src="/static/img/MainLogoLargeBlack.png" alt=""></a>
                 </div>
             </div>
-            <nav class="nav" id="nav-bar">
+            <nav class="nav" id="featured-news">
+                <!-- <div class="search-wrapper" id="left-red-wrapper">
+                    <img id='nav-logo-img-two' src="/static/img/NavLogo4kPink.png" alt="">
+                </div> -->
                 <ul>
-                   <li><a href='/#nav-bar'>Featured</a></li> 
+                   <li><a href='/#featured-news'>Featured</a></li> 
                    <li id="bold"><a href='/lyrics'>Lyrics</a></li> 
                    <li><a href='/news'>News</a></li> 
                    <li><a href='/about'>About</a></li> 
@@ -46,9 +50,10 @@
     <script>
         window.onscroll = function() {myFunction()};
         
-        var navbar = document.getElementById("nav-bar");
+        var navbar = document.getElementById("featured-news");
         var logo = document.getElementById("FuckLandin");
         var social = document.getElementById("social-media");
+        var logo_left = document.getElementById("#left-red-wrapper");
         var sticky = navbar.offsetTop;
     
         function myFunction() {
@@ -57,12 +62,14 @@
             logo.style.top = 4 + 'px';
             FuckLandin.style.display = "block"
             social.style.display = "none"
+            // logo_left.style.display = "block"
             navbar.classList.add("sticky")
           } else {
             document.body.style.paddingTop = 0;
             navbar.classList.remove("sticky");
             FuckLandin.style.display = "none"
             social.style.display = "inline-flex"
+            // logo_left.style.display = "none"
             logo.style.top = 46 + 'px';
           }
         }
@@ -70,4 +77,8 @@
 
     {% block content %}
     {% endblock %}
+
+    <footer id="footer">
+
+    </footer>
 </html>

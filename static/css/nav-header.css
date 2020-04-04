@@ -47,11 +47,11 @@ a:focus {
 }
 
 /* SEARCH */
-.search-icon-wrapper {
-    margin-top: 5px;
-    margin-left: 25px;
+.search-wrapper {
+    display: inline-flex;
     width: auto;
-    height: 25px;
+    margin-right: auto;
+    margin-left: 10px;
 }
 
 #search-icon {
@@ -157,6 +157,15 @@ a:focus {
     image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
     -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
 }
+
+/* #left-red-wrapper {
+}
+
+#nav-logo-img-two {
+    height: 22px;
+    width: 200px;
+} */
+
 /* */
 
 /* ACTUAL NAV */
@@ -249,6 +258,13 @@ i.fa::before {
 }
 /*  */
 
+
+/* FOOTER */
+#footer {
+
+}
+
+/* */
 
 /* TO FIX RESPONSIVENESS */
 
