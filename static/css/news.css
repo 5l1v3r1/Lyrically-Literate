@@ -1,0 +1,27 @@
+.news-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.news {
+    margin: 20px 25px;
+    width: calc(100% * (1 / 3) - 45px);
+}
+
+.news:first-of-type {
+    margin-left: 10px;
+}
+
+.news:last-of-type {
+    margin-right: 0;
+}
+
+.news:nth-of-type(4) {
+    margin-left: 10px;
+}
+
+.news img {
+    width: 250px;
+    height: 225px;
+}
