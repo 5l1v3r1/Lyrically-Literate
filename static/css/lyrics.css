@@ -1,7 +1,7 @@
 /* genreal page content */
 :root {
     --main-color: rgba(255, 69, 69, .5);
-    --light-black: rgba(12, 12, 12, .90)
+    --light-black: rgba(28, 28, 28, 1);
 }
 
 .news-title {
@@ -111,7 +111,7 @@ label:last-of-type {
     color: white;
     padding: 5px 7px; 
     margin-top: 10px;
-    background-color: rgba(12, 12, 12, .7);
+    background-color: rgba(28, 28, 28, 1);
     border: none;
     border-bottom: solid 2px rgba(255, 69, 69, 1);
     width: 78.5%;
@@ -122,7 +122,7 @@ label:last-of-type {
     font-size: 16px;
     color: white;
     border: none;
-    background-color: rgba(12, 12, 12, .7);
+    background-color: rgba(28, 28, 28, 1);
     border-bottom: solid 2px rgba(255, 69, 69, 1);
     padding: 5px;
     width: 20%;

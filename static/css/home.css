@@ -1,6 +1,6 @@
 :root {
     --main-color: rgba(255, 69, 69, 1);
-    --light-black: rgba(18, 18, 18)
+    --light-black: rgba(28, 28, 28, 1);
 }
 
 
@@ -8,6 +8,7 @@
 #featured {
     display: flex;
     flex-direction: column;
+    position: relative;
     padding-top: 55px;
     width: 100%;
     min-height: 100vh;
@@ -134,7 +135,10 @@
 
 tr {
     border-bottom: solid 1px white;
-    
+}
+
+tr:last-of-type {
+    border-bottom: none;
 }
 
 td {

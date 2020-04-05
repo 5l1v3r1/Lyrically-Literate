@@ -1,6 +1,6 @@
 :root {
     --main-color: rgba(255, 69, 69, .5);
-    --light-black: rgba(18, 18, 18)
+    --light-black: rgba(18, 18, 18, 1);
 }
 
 @font-face {
@@ -25,12 +25,51 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    height: 100%;
 }
 
 body {
     margin: 0;
     padding: 0;
     color: white;
+    height: 100%;
+}
+
+footer {
+    background-color: var(--light-black);
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    padding: 10px;
+    height: 400px;
+}
+
+.footer-wrapper {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+
+footer img {
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+}
+
+.footer-content, .title {
+    color: #ff5f5f;
+}
+
+.footer-content {
+    background-color: #ff5f5f;
+    height: 300px;
+    width: 600px;
+}
+
+.title {
+
 }
 
 /* Disable all outlines for links - mainly for firefox */
@@ -245,29 +284,16 @@ i.fa::before {
 }
 
 i img {
-    margin-top: 3px;
-    width: 36.5px;
-    height: 18.67px;
+    margin-top: 1px;
+    width: 32.5px;
+    height: 22.67px;
 }
 
 #logo-img-red {
     height: 22px;
     width: 22px;
-    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
-    image-rendering: -moz-crisp-edges;          /* Firefox                        */
-    image-rendering: -o-crisp-edges;            /* Opera                          */
-    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-    /* image-rendering: pixelated; Chrome */
-    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
 }
-/*  */
 
-
-/* FOOTER */
-#footer {
-
-}
 
 /* */
 
