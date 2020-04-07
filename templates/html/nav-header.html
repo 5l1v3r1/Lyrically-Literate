@@ -6,6 +6,7 @@
         <meta name="author" content="Nick Mantini">
         <link rel="stylesheet" href="/static/css/nav-header.css">
         <link rel="stylesheet" href="/static/css/home.css">
+        <link rel="stylesheet" href="/static/css/footer.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="/static/img/MainLogoLarge.png">
     </head>
@@ -48,6 +49,48 @@
         </header>
     </body>
 
+    <section id="featured">
+        {% block content %}
+        {% endblock %}
+
+        <footer id="footer">
+            <div class="footer-wrapper">
+                <div class="logo-social-wrapper">
+                    <img src="/static/img/MainLogoLarge.png" alt="">
+                    <div class="social-wrapper">
+                        <span><a href="https://www.tiktok.com/@lyricallyliterate"><span><i class="fa" aria-hidden="true"><img src="/static/img/tik-tok.png" alt=""></i></span></a></span>
+                        <span><a href="https://www.youtube.com/channel/UCs7dy4QK21Wh2O8fhyA4lEw"><span><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a></span>
+                        <span><a href="https://www.instagram.com/lyricallyliterate/"><span><i class="fa fa-instagram" aria-hidden="true"></i></span></a></span>    
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <div class="title">
+                        <!-- Lyrically Literate -->
+                    </div>
+                    <div class="footer-content-links">
+                        <a href="/#featured-news">Featured Content</a>
+                        <a href="/lyrics">Lyrics</a>
+                        <a href="/news">News</a>
+                        <a href="/about">About</a>
+                        <a href="/shop">Shop</a>
+                    </div>
+                    <div class="footer-content-links right">
+                        <a href="/#featured-news">Contact Us</a>
+                        <a href="/#featured-news">Developers</a>
+                        <a href="/#featured-news">Licensing</a>
+                        <a href="/#featured-news">Copyright Policy</a>
+                        <div class="search-btn-wrapper">
+                            <input type="text" id="search-term-footer" name="search-term" placeholder="Join our newsletter" autocomplete="off">
+                            <button class="btn-footer" type="submit" name="search" value="search">Join</button>     
+                        </div>        
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"></div>
+            <div class="copyright-text">&copy;Lyrically Literate</div>
+        </footer>
+    </section>
+
     <script>
         window.onscroll = function() {myFunction()};
         
@@ -75,19 +118,4 @@
           }
         }
     </script>
-
-    {% block content %}
-    {% endblock %}
-    <footer id="footer">
-        <div class="footer-wrapper">
-            <img src="/static/img/MainLogoLarge.png" alt="">
-            <div class="footer-content">
-                <div class="title">
-                    Lyrically Literate
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom"></div>
-        <div class="copyright-text">&copy;Lyrically Literate</div>
-    </footer>
 </html>
