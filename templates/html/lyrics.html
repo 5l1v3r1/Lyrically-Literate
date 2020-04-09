@@ -17,23 +17,23 @@
                         <div class="flex-wrapper">
                             <div class="radio-wrapper">
                                 <label unselectable="on"> 
-                                    <input class="radio" type="radio" id="any" name="type" value="any">
-                                    <span class="radio-border"></span>
+                                    <input class="radio" type="radio" id="any" name="type" value="any" checked>
+                                    <span class="radio-border" id="first"></span>
                                     Any
                                 </label>                    
                                 <label>
                                     <input class="radio" type="radio" id="song" name="type" value="song">
-                                    <span class="radio-border"></span>
+                                    <span class="radio-border" id="secound"></span>
                                     Songs
                                 </label>
                                 <label>
                                     <input class="radio" type="radio" id="artist" name="type" value="artist">
-                                    <span class="radio-border"></span>
+                                    <span class="radio-border" id="third"></span>
                                     Artists
                                 </label>
                                 <label>
                                     <input class="radio" type="radio" id="album" name="type" value="album">
-                                    <span class="radio-border"></span>
+                                    <span class="radio-border" id="last"></span>
                                     Albums
                                 </label>
                                 <div class="search-btn-wrapper">
@@ -50,11 +50,22 @@
             </div>
         </section>
 
-        <section class="section grey" style="margin-top: 40px;">
+        <section class="section grey" style="margin-top: 20px;">
             <div class="content-conatiner">
                 <article class="article-content">
                     <div class='news-title' id="search-results-title">Search Results</div>
                     <div class="title-line"></div>
+                </article>
+            </div>
+            <div class="content-conatiner">
+                <article class="article-content scroll">
+                    <div class="p-overflow">
+                        <p>
+                            {% if lyrics %}
+                            {{ lyrics }}
+                            {% endif %}
+                        </p>
+                    </div>
                 </article>
             </div>
         </section>

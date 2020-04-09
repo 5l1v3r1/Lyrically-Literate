@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template, request, abort, redirect
 from flask.json import jsonify
-
+from utilites.lyrics import get_lyrics
 
 app = Flask(__name__)
 
@@ -61,7 +61,8 @@ def lyrics_post():
     search_type = request.form['type']
     search_term = request.form['search-term']
     print(f"Search Query: {search_type} | Term: {search_term}")
-    return render_template("/html/lyrics.html")
+    lyrics_return = get_lyrics(search_term)
+    return render_template("/html/lyrics.html", lyrics=lyrics_return)
 
 
 ## MAIN SEARCH URL -- ALL WILL BE REDIRECTED TO HERE -- ACTUAL CONTENT PAGE -- LYRCIS RESULTS HAS LINK TO GO HERE
