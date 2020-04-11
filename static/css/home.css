@@ -176,6 +176,32 @@ td:first-child {
     outline: none;
 }
 
+
+.video-four-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.news-video {
+    margin-top: 10px;
+    margin-right: 20px;
+    /* border-right: 1px solid black; */
+    width: calc(100% * (1 / 4) - 40px);
+}
+
+.news-video:nth-child(4) {
+    border-right: none;
+}
+
+
+.news-video img {
+    width: 120px;
+    height: 60px;
+    min-width: 100%;
+    min-height: 100%;
+}
+
 /* media querys to check height etc for ading spacing in news article content - less empty spacve at bottom  */
 
 /* IF SCREEN SIZE NOT RESOLUTION IS > 1600 THEN  PUSH CONTENT MORE RIGHT*/
