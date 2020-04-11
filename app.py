@@ -22,27 +22,27 @@ def is_valid_signature(x_hub_signature, data, private_key):
 @app.route('/update_server', methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        abort_code = 418
-        # Do initial validations on required headers
-        if 'X-Github-Event' not in request.headers:
-            abort(abort_code)
-        if 'X-Github-Delivery' not in request.headers:
-            abort(abort_code)
-        if 'X-Hub-Signature' not in request.headers:
-            abort(abort_code)
-        if not request.is_json:
-            abort(abort_code)
-        if 'User-Agent' not in request.headers:
-            abort(abort_code)
-        ua = request.headers.get('User-Agent')
-        if not ua.startswith('GitHub-Hookshot/'):
-            abort(abort_code)
+        # abort_code = 418
+        # # Do initial validations on required headers
+        # if 'X-Github-Event' not in request.headers:
+        #     abort(abort_code)
+        # if 'X-Github-Delivery' not in request.headers:
+        #     abort(abort_code)
+        # if 'X-Hub-Signature' not in request.headers:
+        #     abort(abort_code)
+        # if not request.is_json:
+        #     abort(abort_code)
+        # if 'User-Agent' not in request.headers:
+        #     abort(abort_code)
+        # ua = request.headers.get('User-Agent')
+        # if not ua.startswith('GitHub-Hookshot/'):
+        #     abort(abort_code)
 
-        event = request.headers.get('X-GitHub-Event')
-        if event == "ping":
-            return json.dumps({'msg': 'Hi!'})
-        if event != "push":
-            return json.dumps({'msg': "Wrong event type"})
+        # event = request.headers.get('X-GitHub-Event')
+        # if event == "ping":
+        #     return json.dumps({'msg': 'Hi!'})
+        # if event != "push":
+        #     return json.dumps({'msg': "Wrong event type"})
 
         x_hub_signature = request.headers.get('X-Hub-Signature')
         if not is_valid_signature(x_hub_signature, request.data, "Mantini88"):
