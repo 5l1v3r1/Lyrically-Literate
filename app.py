@@ -49,7 +49,7 @@ def webhook():
             print('Deploy signature failed: {sig}'.format(sig=x_hub_signature))
             abort(418)
         g = git.Git('LyricallyLiterate/')
-        g.pull('origin','master')
+        g.pull('origin','Live')
         return 'Updated PythonAnywhere successfully', 200
     else:
         return 'Wrong event type', 400
