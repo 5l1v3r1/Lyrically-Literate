@@ -40,6 +40,21 @@
     font-size: 16px;
 }
 
+#search-term::-moz-placeholder {
+    opacity: 1; 
+    color: white;
+} 
+
+#search-term:-moz-placeholder {
+    opacity: 1; 
+    color: white;
+} 
+
+#search-term:-ms-input-placeholder {
+    color: white;
+}
+
+
 .radio-wrapper {
     width: auto;
     height: auto;
