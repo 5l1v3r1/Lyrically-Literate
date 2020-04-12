@@ -81,12 +81,6 @@
     box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 1), 0 6px 20px 0 rgba(128, 128, 128, .8);
 }
 
-.news-img:hover {
-    transform: scale(1.008);
-    box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 1), 0 6px 20px 0 rgba(128, 128, 128, .8);
-}
-
-
 /* All IMGS WILL TAKE UP WHATS LEFT OVER FROM ARTICLE SO ITS DYNAMIC */
 .content-conatiner img {
     /* width: 100%;
@@ -185,22 +179,29 @@ td:first-child {
 
 .news-video {
     margin-top: 10px;
-    margin-right: 20px;
-    /* border-right: 1px solid black; */
-    width: calc(100% * (1 / 4) - 40px);
+    margin-right: 23.5px;
+    border-right: 2px solid black;
+    padding-right: 47px;
+    width: calc(100% * (1 / 4) - 60px);
 }
 
 .news-video:nth-child(4) {
+    margin-right: 0;
+    padding-right: 0;
     border-right: none;
 }
 
-
 .news-video img {
-    width: 120px;
-    height: 60px;
-    min-width: 100%;
-    min-height: 100%;
+    width: 250px;
+    height: 200px;
 }
+
+.news-type {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
 
 /* media querys to check height etc for ading spacing in news article content - less empty spacve at bottom  */
 
