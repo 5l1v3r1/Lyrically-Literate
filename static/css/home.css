@@ -64,7 +64,7 @@
     text-decoration: underline var(--light-black);
 }
 
-.article-content h3{
+.article-content .header{
     font-size: 21px;
 }
 
@@ -206,7 +206,7 @@ td:first-child {
 
 /* IF SCREEN SIZE NOT RESOLUTION IS > 1600 THEN  PUSH CONTENT MORE RIGHT*/
 @media only screen and (min-width: 1600px){
-    .article-content h3 {
+    .article-content .header {
         font-size: 28px;
     }
 

@@ -5,15 +5,18 @@ import hashlib
 import json
 import yaml
 import sshtunnel
+import pymysql
 
 from flask import Flask, render_template, request, abort, redirect
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import text
 from flask.json import jsonify
 from utilites.lyrics import get_lyrics
 
 
 app = Flask(__name__)
 db = None
+
 
 ## GITHUB PULL WEBHOOK
 def is_valid_signature(x_hub_signature, data, private_key):
@@ -72,9 +75,40 @@ def featured():
     if request.method == 'POST':
         email = request.form['newsletter']
         if email:
-            cursor = mysql.get_db().cursor()
-            print(cursor.execute("SELECT * FROM NMan1$newsletter.emails"))
+            connection = db.engine.connect()
+            trans = connection.begin()
+            try:
+                q = text("SELECT email FROM emails WHERE email = :x")
+                result = connection.execute(q, x=email)
+                if not result.fetchone():
+                    ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+                    q = text("INSERT INTO NMan1$newsletter.emails (email, ip) VALUES (:x, :y)")
+                    connection.execute(q, x=email, y=ip)
+                else:
+                    print("Email already exsits")
+                trans.commit()
+                connection.close()
+            except:
+                trans.rollback()
+                raise
     return render_template("/html/home.html")
+
+
+@app.route("/unsubscribe", methods=['POST', 'GET'])
+def unsubscribe():
+    ## Newsletter unsubscribe
+    if request.method == 'POST':
+        connection = db.engine.connect()
+        trans = connection.begin()
+        try:
+            q = text("INSERT INTO NMan1$newsletter.emails (email, ip) VALUES (:x, :y)")
+            connection.execute(q, x=email)
+            trans.commit()
+            connection.close()
+        except:
+            trans.rollback()
+            raise
+    return render_template("/html/unsubscribe.html")
 
 
 @app.route("/lyrics")
@@ -119,7 +153,6 @@ def search_post():
 def lyrics_post():
     search_type = request.form['type']
     search_term = request.form['search-term']
-    print(f"Search Query: {search_type} | Term: {search_term}")
     lyrics_return = get_lyrics(search_term)
     return render_template("/html/lyrics.html", lyrics=lyrics_return)
 
@@ -132,11 +165,11 @@ def search_manual(first=None, last=None, song=None):
 
 
 if __name__ == "__main__":
+    pymysql.install_as_MySQLdb()
     db_file = yaml.load(open("./utilites/db.yaml"))
-    tunnel = sshtunnel.SSHTunnelForwarder(('ssh.pythonanywhere.com'), ssh_username='NMan1', ssh_password=db_file["ssh_password"], remote_bind_address=(db_file['host'], 3306))
+    tunnel = sshtunnel.SSHTunnelForwarder(('ssh.pythonanywhere.com'), ssh_username='NMan1', ssh_password=db_file["ssh_password"], remote_bind_address=(db_file['mysql_host'], 3306))
     tunnel.start()
     app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://NMan1:{db_file["mysql_password"]}@127.0.0.1:{tunnel.local_bind_port}/{db_file["mysql_db"]}'
-    mysql = MySQL(app)
-    mysql.init_app(app)
+    db = SQLAlchemy(app)
     app.run(debug=True)
 
