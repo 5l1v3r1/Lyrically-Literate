@@ -95,11 +95,16 @@ footer {
     text-decoration: none;
 }
 
-.title {
-
+.right a {
+    margin-top: -20px;
 }
 
 .search-btn-wrapper {
+    margin-top: -10px;
+}
+
+#newsletter-form {
+    margin-top: -15px;
 }
 
 #search-term-footer {

@@ -1,0 +1,5 @@
+mysql_host: 'NMan1.mysql.pythonanywhere-services.com'
+mysql_user: 'NMan1'
+mysql_password: 'Callie6776!!!'
+ssh_password: 'Callie6776!'
+mysql_db: 'newsletter'

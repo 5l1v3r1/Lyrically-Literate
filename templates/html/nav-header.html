@@ -80,9 +80,11 @@
                         <a href="/#featured-news">Licensing</a>
                         <a href="/#featured-news">Copyright Policy</a>
                         <div class="search-btn-wrapper">
-                            <input type="text" id="search-term-footer" name="search-term" placeholder="Join our newsletter" autocomplete="off">
-                            <button class="btn-footer" type="submit" name="search" value="search">Join</button>     
-                        </div>        
+                            <form action="/featured" method="post" id='newsletter-form'>
+                                <input type="email" id="search-term-footer" name="newsletter"" placeholder="Join our newsletter" autocomplete="off">
+                                <button class="btn-footer" type="submit" name="newsletter-btn" value="newsletter-btn">Join</button>                          
+                            </form>
+                        </div>      
                     </div>
                 </div>
             </div>

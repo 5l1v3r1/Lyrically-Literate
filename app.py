@@ -3,12 +3,17 @@ import git
 import hmac
 import hashlib
 import json
+import yaml
+import sshtunnel
+
 from flask import Flask, render_template, request, abort, redirect
+from flask_sqlalchemy import SQLAlchemy
 from flask.json import jsonify
 from utilites.lyrics import get_lyrics
 
-app = Flask(__name__)
 
+app = Flask(__name__)
+db = None
 
 ## GITHUB PULL WEBHOOK
 def is_valid_signature(x_hub_signature, data, private_key):
@@ -58,11 +63,17 @@ def webhook():
 ## ALL URL ROUTES
 @app.route("/")
 def home():
-    return render_template("/html/home.html")
+    return redirect("/featured")
 
 
-@app.route("/featured")
+@app.route("/featured", methods=['POST', 'GET'])
 def featured():
+    ## Newsletter signup
+    if request.method == 'POST':
+        email = request.form['newsletter']
+        if email:
+            cursor = mysql.get_db().cursor()
+            print(cursor.execute("SELECT * FROM NMan1$newsletter.emails"))
     return render_template("/html/home.html")
 
 
@@ -121,5 +132,11 @@ def search_manual(first=None, last=None, song=None):
 
 
 if __name__ == "__main__":
+    db_file = yaml.load(open("./utilites/db.yaml"))
+    tunnel = sshtunnel.SSHTunnelForwarder(('ssh.pythonanywhere.com'), ssh_username='NMan1', ssh_password=db_file["ssh_password"], remote_bind_address=(db_file['host'], 3306))
+    tunnel.start()
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://NMan1:{db_file["mysql_password"]}@127.0.0.1:{tunnel.local_bind_port}/{db_file["mysql_db"]}'
+    mysql = MySQL(app)
+    mysql.init_app(app)
     app.run(debug=True)
 
