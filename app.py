@@ -191,5 +191,6 @@ if __name__ == "__main__":
     tunnel.start()
     app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://NMan1:{db_file["mysql_password"]}@127.0.0.1:{tunnel.local_bind_port}/{db_file["mysql_db"]}'
     db = SQLAlchemy(app)
-    app.run(debug=True)
-
+    app.run(debug=False)
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://NMan1.mysql.pythonanywhere-services.com'
