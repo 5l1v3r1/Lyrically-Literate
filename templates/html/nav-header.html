@@ -9,7 +9,15 @@
         <link rel="stylesheet" href="/static/css/footer.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="/static/img/MainLogoLarge.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     </head>
+
+    <style>
+        .swal2-title {
+            display: block !important;
+        }
+    </style>
+
     <body>
         <header>
             <div class="main-header">
@@ -81,7 +89,7 @@
                         <a href="/#featured-news">Copyright Policy</a>
                         <div class="search-btn-wrapper">
                             <form action="/featured" method="post" id='newsletter-form'>
-                                <input type="email" id="search-term-footer" name="newsletter"" placeholder="Join our newsletter" autocomplete="off">
+                                <input type="text" id="search-term-footer" name="newsletter" placeholder="Join our newsletter" autocomplete="off">
                                 <button class="btn-footer" type="submit" name="newsletter-btn" value="newsletter-btn">Join</button>                          
                             </form>
                         </div>      
@@ -120,4 +128,50 @@
           }
         }
     </script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('form').on('submit', function(event) {
+                $.ajax({
+                    data : {
+                        email : $('#search-term-footer').val()
+                    },
+                    type : 'POST',
+                    url : '/featured'
+                })
+                .done(function(data) {
+                    if (data.error) {
+                        Swal.fire({
+                            title: 'Failed',
+                            text: data.error,                        
+                            showClass: {
+                                popup: 'animated fadeInDown faster'
+                            },
+                            hideClass: {
+                                popup: 'animated fadeOutUp faster'
+                            }
+                        })                    
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: data.msg,                        
+                            showClass: {
+                                popup: 'animated fadeInDown faster'
+                            },
+                            hideClass: {
+                                popup: 'animated fadeOutUp faster'
+                            }
+                        })    
+                    }
+                });
+                event.preventDefault();
+            });
+        });
+    </script>   
 </html>

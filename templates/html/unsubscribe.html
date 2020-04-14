@@ -6,6 +6,7 @@
     <title>About</title>
     <link rel="stylesheet" href="/static/css/home.css">
     <link rel="stylesheet" href="/static/css/lyrics.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
     <style>
         #featured {
@@ -13,8 +14,8 @@
             min-height: auto;
         }
 
-        #footer {
-            margin-top: 112px !important;
+        .swal2-title {
+            display: block !important;
         }
     </style>
 
@@ -25,15 +26,69 @@
                 <div class="title-line"></div>
                 <h4 class="header" style="text-align: center;">We wont hold you hostage, but we'll be sad to see you go!</h4>
                 <h4 class="header" style="margin-top: -10px; text-align: center;">To unsubscribe from our newsletter enter your email and click unsubscribe.</h4>
-                <form action="/unsubscribe" method="post" id='newsletter-form'>
-                    <div class="search-btn-wrapper" style="width: 70%; transform: translateX(20%);">
-                        <input type="email" id="search-term" name="un-newsletter" placeholder="Enter Your Email" autocomplete="off">
-                        <button class="btn" type="submit" name="newsletter-btn" value="newsletter-btn">Unsubscribe</button>                          
+                <form id='newsletter-form'>
+                    <div class="search-btn-wrapper" style="width: 70%; transform: translateX(22%);">
+                        <input type="text" id="search-term" name="un-newsletter" placeholder="Enter Your Email" autocomplete="off" style="padding: 8px 8px;">
+                        <button class="btn" type="submit" id="newsletter-btn"  style="padding: 8px 8px;">Unsubscribe</button>                          
                     </div>
                 </form>
             </article>
         </div>
     </section>
 </html>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var spaceBelow = window.innerHeight - document.getElementById("footer").getBoundingClientRect().bottom;
+        var footer = document.getElementById('footer');
+        var footer_top_value = footer.getBoundingClientRect().top;
+        if (spaceBelow < 0)
+            footer.style.top = footer_top_value - spaceBelow - 76 + 'px';
+        else
+            footer.style.top = footer_top_value + spaceBelow - 76 +  'px';
+
+        $('form').on('submit', function(event) {
+            $.ajax({
+                data : {
+                    email : $('#search-term').val()
+                },
+                type : 'POST',
+                url : '/unsubscribe'
+            })
+            .done(function(data) {
+                if (data.error) {
+                    Swal.fire({
+                        title: 'Failed',
+                        text: data.error,                        
+                        showClass: {
+                            popup: 'animated fadeInDown faster'
+                        },
+                        hideClass: {
+                            popup: 'animated fadeOutUp faster'
+                        }
+                    })                    
+                }
+                else {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: data.msg,                        
+                        showClass: {
+                            popup: 'animated fadeInDown faster'
+                        },
+                        hideClass: {
+                            popup: 'animated fadeOutUp faster'
+                        }
+                    })    
+                }
+            });
+            event.preventDefault();
+        });
+    });
+</script>
 
 {% endblock %}

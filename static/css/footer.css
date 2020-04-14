@@ -151,6 +151,11 @@ footer {
     padding: 5px !important;
     letter-spacing: 1.25px  !important;
     width: auto;
+    outline: none;
+}
+
+.btn-footer:focus {
+    outline: none;
 }
 
 .btn-footer:hover {

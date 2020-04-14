@@ -73,8 +73,11 @@ def home():
 def featured():
     ## Newsletter signup
     if request.method == 'POST':
-        email = request.form['newsletter']
+        email = request.form['email']
         if email:
+            if email.find("@") == -1:
+                return jsonify({'error' : 'Invalid email format'})
+
             connection = db.engine.connect()
             trans = connection.begin()
             try:
@@ -84,22 +87,29 @@ def featured():
                     ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
                     q = text("INSERT INTO NMan1$newsletter.emails (email, ip) VALUES (:x, :y)")
                     connection.execute(q, x=email, y=ip)
+                    return jsonify({'msg' : 'Your email has been subscribed, thank you! We promise not to be too annoying.'})
                 else:
-                    print("Email already exsits")
-                trans.commit()
-                connection.close()
+                    trans.commit()
+                    connection.close()
+                    return jsonify({'error' : 'Email already subscribed'})
             except:
                 trans.rollback()
-                raise
-    return render_template("/html/home.html")
+                return jsonify({'error' : 'An unknown error occurred please try again later'})
+        else:
+            return jsonify({'error' : 'No email specified!'})
+    else:
+        return render_template("/html/home.html")
 
 
 @app.route("/unsubscribe", methods=['POST', 'GET'])
 def unsubscribe():
     ## Newsletter unsubscribe
     if request.method == 'POST':
-        email = request.form['un-newsletter']
+        email = request.form['email']
         if email:
+            if email.find("@") == -1:
+                return jsonify({'error' : 'Invalid email format'})
+
             connection = db.engine.connect()
             trans = connection.begin()
             try:
@@ -107,10 +117,14 @@ def unsubscribe():
                 connection.execute(q, x=email)
                 trans.commit()
                 connection.close()
+                return jsonify({'msg' : 'Your email has been unsubscribed, we hope to see you again!'})
             except:
                 trans.rollback()
-                raise
-    return render_template("/html/unsubscribe.html")
+                return jsonify({'error' : 'An unknown error occurred please try again later'})
+        else:
+            return jsonify({'error' : 'No email specified!'})
+    else:
+        return render_template("/html/unsubscribe.html")
 
 
 @app.route("/lyrics")
