@@ -171,7 +171,7 @@ def search_post():
 ## SEARCH FROM LYRICS PAGE
 @app.route("/lyrics", methods=['POST'])
 def lyrics_post():
-    search_type = request.form['type']
+    # search_type = request.form['type']
     search_term = request.form['search-term']
     lyrics_return = get_lyrics(search_term)
     return render_template("/html/lyrics.html", lyrics=lyrics_return)
@@ -191,5 +191,6 @@ if __name__ == "__main__":
     tunnel.start()
     app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://NMan1:{db_file["mysql_password"]}@127.0.0.1:{tunnel.local_bind_port}/{db_file["mysql_db"]}'
     db = SQLAlchemy(app)
-    app.run(debug=True)
-
+    app.run(debug=False)
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://NMan1.mysql.pythonanywhere-services.com'
