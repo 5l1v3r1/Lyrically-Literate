@@ -85,15 +85,18 @@ def featured():
                 result = connection.execute(q, x=email)
                 if not result.fetchone():
                     ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
-                    q = text("INSERT INTO NMan1$newsletter.emails (email, ip) VALUES (:x, :y)")
+                    q = text("INSERT INTO emails(email, ip) VALUES(:x, :y)")
                     connection.execute(q, x=email, y=ip)
-                    return jsonify({'msg' : 'Your email has been subscribed, thank you! We promise not to be too annoying.'})
-                else:
                     trans.commit()
                     connection.close()
+                    return jsonify({'msg' : 'Your email has been subscribed, thank you! We promise not to be too annoying.'})
+                else:
+                    connection.close()
+                    raise
                     return jsonify({'error' : 'Email already subscribed'})
             except:
                 trans.rollback()
+                connection.close()
                 return jsonify({'error' : 'An unknown error occurred please try again later'})
         else:
             return jsonify({'error' : 'No email specified!'})
@@ -120,6 +123,7 @@ def unsubscribe():
                 return jsonify({'msg' : 'Your email has been unsubscribed, we hope to see you again!'})
             except:
                 trans.rollback()
+                connection.close()
                 return jsonify({'error' : 'An unknown error occurred please try again later'})
         else:
             return jsonify({'error' : 'No email specified!'})

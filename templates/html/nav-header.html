@@ -144,6 +144,7 @@
                     url : '/featured'
                 })
                 .done(function(data) {
+                    $('#search-term').val('');
                     if (data.error) {
                         Swal.fire({
                             title: 'Failed',

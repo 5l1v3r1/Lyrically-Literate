@@ -57,36 +57,36 @@
                     email : $('#search-term').val()
                 },
                 type : 'POST',
-                url : '/unsubscribe'
+                url : '/unsubscribe',
+                success: function(data) {
+                    $('#search-term').val('');
+                    if (data.error) {
+                        Swal.fire({
+                            title: 'Failed',
+                            text: data.error,                        
+                            showClass: {
+                                popup: 'animated fadeInDown faster'
+                            },
+                            hideClass: {
+                                popup: 'animated fadeOutUp faster'
+                            }
+                        })                    
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: data.msg,                        
+                            showClass: {
+                                popup: 'animated fadeInDown faster'
+                            },
+                            hideClass: {
+                                popup: 'animated fadeOutUp faster'
+                            }
+                        })    
+                    }
+                }
             })
-            .done(function(data) {
-                if (data.error) {
-                    Swal.fire({
-                        title: 'Failed',
-                        text: data.error,                        
-                        showClass: {
-                            popup: 'animated fadeInDown faster'
-                        },
-                        hideClass: {
-                            popup: 'animated fadeOutUp faster'
-                        }
-                    })                    
-                }
-                else {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success',
-                        text: data.msg,                        
-                        showClass: {
-                            popup: 'animated fadeInDown faster'
-                        },
-                        hideClass: {
-                            popup: 'animated fadeOutUp faster'
-                        }
-                    })    
-                }
-            });
-            event.preventDefault();
         });
     });
 </script>
