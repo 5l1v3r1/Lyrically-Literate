@@ -194,3 +194,5 @@ if __name__ == "__main__":
     app.run(debug=False)
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://NMan1.mysql.pythonanywhere-services.com'
+     db = SQLAlchemy(app)
+
