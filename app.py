@@ -1,4 +1,4 @@
-# OPERATION GET RED OCTOBERS 
+# OPERATION GET RED OCTOBERS
 import git
 import hmac
 import hashlib
@@ -89,6 +89,7 @@ def featured():
                     connection.execute(q, x=email, y=ip)
                     trans.commit()
                     connection.close()
+                    print("Logging message", flush=True)
                     return jsonify({'msg' : 'Your email has been subscribed, thank you! We promise not to be too annoying.'})
                 else:
                     connection.close()
@@ -97,6 +98,7 @@ def featured():
             except:
                 trans.rollback()
                 connection.close()
+                raise
                 return jsonify({'error' : 'An unknown error occurred please try again later'})
         else:
             return jsonify({'error' : 'No email specified!'})
@@ -186,17 +188,14 @@ def search_manual(first=None, last=None, song=None):
 
 if __name__ == "__main__":
     pymysql.install_as_MySQLdb()
-    db_file = yaml.load(open("./utilites/db.yaml"))
+    db_file = yaml.load(open("db.yaml"))
     tunnel = sshtunnel.SSHTunnelForwarder(('ssh.pythonanywhere.com'), ssh_username='NMan1', ssh_password=db_file["ssh_password"], remote_bind_address=(db_file['mysql_host'], 3306))
     tunnel.start()
     app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://NMan1:{db_file["mysql_password"]}@127.0.0.1:{tunnel.local_bind_port}/{db_file["mysql_db"]}'
     db = SQLAlchemy(app)
     app.run(debug=False)
 else:
-    pymysql.install_as_MySQLdb()
-    db_file = yaml.load(open("./utilites/db.yaml"))
-    tunnel = sshtunnel.SSHTunnelForwarder(('ssh.pythonanywhere.com'), ssh_username='NMan1', ssh_password=db_file["ssh_password"], remote_bind_address=(db_file['mysql_host'], 3306))
-    tunnel.start()
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://NMan1:{db_file["mysql_password"]}@127.0.0.1:{tunnel.local_bind_port}/{db_file["mysql_db"]}'
+    db_file = yaml.load(open("/home/NMan1/db.yaml"))
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://NMan1:{db_file["mysql_password"]}@NMan1.mysql.pythonanywhere-services.com/NMan1$newsletter'
     db = SQLAlchemy(app)
 
