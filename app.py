@@ -184,6 +184,7 @@ def search_manual(first=None, last=None, song=None):
     return render_template("/html/content_page.html")
 
 
+debug = False
 if __name__ == "__main__":
     pymysql.install_as_MySQLdb()
     db_file = yaml.load(open("./utilites/db.yaml"))
@@ -194,3 +195,4 @@ if __name__ == "__main__":
     app.run(debug=False)
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://NMan1.mysql.pythonanywhere-services.com'
+    db = SQLAlchemy(app)
