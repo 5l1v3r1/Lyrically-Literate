@@ -171,7 +171,7 @@ def search_post():
 ## SEARCH FROM LYRICS PAGE
 @app.route("/lyrics", methods=['POST'])
 def lyrics_post():
-    search_type = request.form['type']
+    # search_type = request.form['type']
     search_term = request.form['search-term']
     lyrics_return = get_lyrics(search_term)
     return render_template("/html/lyrics.html", lyrics=lyrics_return)
