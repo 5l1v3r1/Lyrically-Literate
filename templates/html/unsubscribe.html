@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="/static/css/home.css">
     <link rel="stylesheet" href="/static/css/lyrics.css">
 
+    <style>
+        #featured {
+            height: auto;
+            min-height: auto;
+        }
+
+        #footer {
+            margin-top: 112px !important;
+        }
+    </style>
+
     <section class="section">
         <div class="content-conatiner">
             <article class="article-content">
@@ -14,7 +25,7 @@
                 <div class="title-line"></div>
                 <h4 class="header" style="text-align: center;">We wont hold you hostage, but we'll be sad to see you go!</h4>
                 <h4 class="header" style="margin-top: -10px; text-align: center;">To unsubscribe from our newsletter enter your email and click unsubscribe.</h4>
-                <form action="/featured" method="post" id='newsletter-form'>
+                <form action="/unsubscribe" method="post" id='newsletter-form'>
                     <div class="search-btn-wrapper" style="width: 70%; transform: translateX(20%);">
                         <input type="email" id="search-term" name="un-newsletter" placeholder="Enter Your Email" autocomplete="off">
                         <button class="btn" type="submit" name="newsletter-btn" value="newsletter-btn">Unsubscribe</button>                          

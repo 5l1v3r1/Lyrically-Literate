@@ -98,16 +98,18 @@ def featured():
 def unsubscribe():
     ## Newsletter unsubscribe
     if request.method == 'POST':
-        connection = db.engine.connect()
-        trans = connection.begin()
-        try:
-            q = text("INSERT INTO NMan1$newsletter.emails (email, ip) VALUES (:x, :y)")
-            connection.execute(q, x=email)
-            trans.commit()
-            connection.close()
-        except:
-            trans.rollback()
-            raise
+        email = request.form['un-newsletter']
+        if email:
+            connection = db.engine.connect()
+            trans = connection.begin()
+            try:
+                q = text("DELETE FROM emails WHERE email = :x")
+                connection.execute(q, x=email)
+                trans.commit()
+                connection.close()
+            except:
+                trans.rollback()
+                raise
     return render_template("/html/unsubscribe.html")
 
 
