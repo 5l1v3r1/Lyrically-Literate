@@ -186,6 +186,7 @@ def search_manual(first=None, last=None, song=None):
     return render_template("/html/content_page.html")
 
 
+debug = False
 if __name__ == "__main__":
     pymysql.install_as_MySQLdb()
     db_file = yaml.load(open("db.yaml"))
@@ -195,7 +196,12 @@ if __name__ == "__main__":
     db = SQLAlchemy(app)
     app.run(debug=False)
 else:
+<<<<<<< HEAD
     db_file = yaml.load(open("/home/NMan1/db.yaml"))
     app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://NMan1:{db_file["mysql_password"]}@NMan1.mysql.pythonanywhere-services.com/NMan1$newsletter'
     db = SQLAlchemy(app)
 
+=======
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://NMan1.mysql.pythonanywhere-services.com'
+    db = SQLAlchemy(app)
+>>>>>>> 5ce71b5ce88a1647be687387964ef9c9cb8e95a2
