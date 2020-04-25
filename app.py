@@ -1,4 +1,3 @@
-# OPERATION GET RED OCTOBERS
 import git
 import hmac
 import hashlib
@@ -53,7 +52,7 @@ def webhook():
             return json.dumps({'msg': "Wrong event type"})
 
         x_hub_signature = request.headers.get('X-Hub-Signature')
-        if not is_valid_signature(x_hub_signature, request.data, "Mantini88"):
+        if not is_valid_signature(x_hub_signature, request.data, ""):
             print('Deploy signature failed: {sig}'.format(sig=x_hub_signature))
             abort(418)
         g = git.Git('LyricallyLiterate/')
@@ -189,13 +188,13 @@ def search_manual(first=None, last=None, song=None):
 debug = False
 if __name__ == "__main__":
     pymysql.install_as_MySQLdb()
-    db_file = yaml.load(open("db.yaml"))
-    tunnel = sshtunnel.SSHTunnelForwarder(('ssh.pythonanywhere.com'), ssh_username='NMan1', ssh_password=db_file["ssh_password"], remote_bind_address=(db_file['mysql_host'], 3306))
+    db_file = yaml.load(open(""))
+    tunnel = sshtunnel.SSHTunnelForwarder(PUT STUFF HERE)
     tunnel.start()
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://NMan1:{db_file["mysql_password"]}@127.0.0.1:{tunnel.local_bind_port}/{db_file["mysql_db"]}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'PUT STUFF HERE'
     db = SQLAlchemy(app)
     app.run(debug=False)
 else:
-    db_file = yaml.load(open("/home/NMan1/db.yaml"))
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://NMan1:{db_file["mysql_password"]}@NMan1.mysql.pythonanywhere-services.com/NMan1$newsletter'
+    db_file = yaml.load(open(""))
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'PUT STUFF HERE'
     db = SQLAlchemy(app)
