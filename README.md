@@ -1,4 +1,4 @@
-# Music Venture | Name: Lyrically Literate 
+# Music Website Project
 ### Current State:
 
 ![](/static/website_screenshots/OverviewGif.gif)
